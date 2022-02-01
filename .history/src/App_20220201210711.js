@@ -8,6 +8,7 @@ function App() {
 		const data = await fetch('https://fakestoreapi.com/products');
 		const result = await data.json();
 		setItems(result);
+		console.log(setItems());
 	}, []);
 	return (
 		<div className="App">
@@ -16,12 +17,7 @@ function App() {
 				<button>Search</button>
 			</Header>
 			{items.map((item) => (
-				<Item
-					key={item.id}
-					image={item.image}
-					title={item.title}
-					description={item.description}
-				/>
+				<Item key={item.id} image={item.image} />
 			))}
 		</div>
 	);

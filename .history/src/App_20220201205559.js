@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Item from './Item';
 
 function App() {
 	const [items, setItems] = useState([]);
 	useEffect(async () => {
 		const data = await fetch('https://fakestoreapi.com/products');
 		const result = await data.json();
-		setItems(result);
+		console.log(result);
 	}, []);
 	return (
 		<div className="App">
@@ -15,14 +14,7 @@ function App() {
 				<input type="text" placeholder="Search" />
 				<button>Search</button>
 			</Header>
-			{items.map((item) => (
-				<Item
-					key={item.id}
-					image={item.image}
-					title={item.title}
-					description={item.description}
-				/>
-			))}
+			<Item />
 		</div>
 	);
 }

@@ -15,14 +15,7 @@ function App() {
 				<input type="text" placeholder="Search" />
 				<button>Search</button>
 			</Header>
-			{items.map((item) => (
-				<Item
-					key={item.id}
-					image={item.image}
-					title={item.title}
-					description={item.description}
-				/>
-			))}
+			<Item items={items} />
 		</div>
 	);
 }

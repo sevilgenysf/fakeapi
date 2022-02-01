@@ -16,12 +16,7 @@ function App() {
 				<button>Search</button>
 			</Header>
 			{items.map((item) => (
-				<Item
-					key={item.id}
-					image={item.image}
-					title={item.title}
-					description={item.description}
-				/>
+				<Item key={item.id} item={item} />
 			))}
 		</div>
 	);
